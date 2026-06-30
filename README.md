@@ -53,4 +53,11 @@ Then scroll all the way down to the end of the smb.conf file and add this:
 Then save it and in the command line type sudo smbpasswd -a your-username   
 sudo systemctl restart smbd 
 sudo systemctl enable smbd
-Then go to the Windows computer
+Then go to the Windows computer in the file folder and type \\10.0.0.20\VeeamBackups here:  
+![Bar](./images/bar.png)    
+Then press enter and a login should pop up. Type in your Linux user and SMB password and should end up here:    
+![Folder](./images/folder.png)  
+Then go to VMWare Workstation and create a Proxmox VM in it by going into VMWare and click on file and clicking on new virtual machine and go through the setup such as Debian 12 64 bit for Guest OS, name of Proxmox VE, give it 8192 MB for memory, bridged adapter for network and 100 GB for the disk and click on create. 
+Then go to settings -> Proccessors and enable the Virtualize Intel VT-x/EPT or AMD-V/RVI like below:    
+![Virt](./images/virt.png)  
+Then power on the VM and get it set up
