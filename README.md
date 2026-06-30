@@ -13,4 +13,8 @@ IP: 192.168.1.10
 Subnet: 255.255.255.0   
 Gateway: 192.168.1.1    
 DNS: 192.168.1.1 or 8.8.8.8 
-Then go to a second computer, can be Linux and go to Network and find the similar Wifi network    
+Then go to a second computer, can be Linux and go to Network and find the similar Wifi network by going to the search menu and find Network, click on settings icon for Wi-FI and in the pop up select IPv4 and see this screen:->
+IP: 192.168.1.20    
+Subnet: 255.255.255.0   
+Gateway: 192.168.1.1    
+DNS: 192.168.1.1    
