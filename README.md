@@ -39,4 +39,8 @@ IP: 10.0.0.10
 Mask: 255.255.255.0 
 Gateway: 10.0.0.1   
 DNS: 10.0.0.1   
-Then 
+Then on the Windows computer, go to Windows Defender Firewall and click on Advanced settings on the left:   
+![Settings2](./images/settings2.png)    
+Then scroll down till you see File and Printer Sharing and find the private one and right click on it and click on enable rule: 
+![Rule](./images/rule.png)  
+Then go to the Linux computer and ping the Windows computer
