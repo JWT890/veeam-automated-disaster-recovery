@@ -44,3 +44,13 @@ Then on the Windows computer, go to Windows Defender Firewall and click on Advan
 Then scroll down till you see File and Printer Sharing and find the private one and right click on it and click on enable rule: 
 ![Rule](./images/rule.png)  
 Then go to the Linux computer and ping the Windows computer
+![Ping](./images/ping.png)  
+Then on the Linux computer go to the command line and type sudo apt install samba -y, then type sudo ufw status to see the status, if off, type sudo ufw enable and rerun to see it if turned on. Next type sudo ufw allow 445/tcp, then type sudo ufw allow samba, then sudo ufw reload to reload and check the ufw status once again: 
+![Status](./images/status.png)  
+Then type mkdir -p ~/VeeamBackups to create the directory and type sudo nano /etc/samba/smb.conf after getting into it. 
+Then scroll all the way down to the end of the smb.conf file and add this:  
+![Setup](./images/setup.png)    
+Then save it and in the command line type sudo smbpasswd -a your-username   
+sudo systemctl restart smbd 
+sudo systemctl enable smbd
+Then go to the Windows computer
