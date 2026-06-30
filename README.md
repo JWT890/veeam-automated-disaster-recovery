@@ -13,8 +13,30 @@ IP: 192.168.1.10
 Subnet: 255.255.255.0   
 Gateway: 192.168.1.1    
 DNS: 192.168.1.1 or 8.8.8.8 
-Then go to a second computer, can be Linux and go to Network and find the similar Wifi network by going to the search menu and find Network, click on settings icon for Wi-FI and in the pop up select IPv4 and see this screen:->
+Then go to a second computer, can be Linux and go to Network and find the similar Wifi network by going to the search menu and find Network, click on settings icon for Wi-FI and in the pop up select IPv4 and see this screen:
+![Linux](./images/linux.png)    
+Then enter this information ->
 IP: 192.168.1.20    
 Subnet: 255.255.255.0   
 Gateway: 192.168.1.1    
 DNS: 192.168.1.1    
+
+If 192 doesn't work, then on Linux type ip addr to see Wi-Fi address, then hostname -I to get route along with ip route to see what the route is, likely will depend on what your router setup is.  
+In this instance lets change it to, on Linux, to this:  
+IP: 10.0.0.20   
+Mask: 255.255.255.0 
+Gateway: 10.0.0.1   
+DNS: 10.0.0.1   
+Then type nmcli connection show to see available networks, then type these commands:    
+nmcli connection modify "Wi-Fi Name" ipv4.addresses 10.0.0.20/24    
+nmcli connection modify "Wi-Fi Name" ipv4.gateway 10.0.0.1  
+nmcli connection modify "Wi-Fi Name" ipv4.dns "10.0.0.1"    
+nmcli connection modify "Wi-Fi Name" ipv4.method manual 
+nmcli connection up "Wi-Fi Name".   
+Last command should reset it and get it back up again.  
+Then on Windows do this:    
+IP: 10.0.0.10   
+Mask: 255.255.255.0 
+Gateway: 10.0.0.1   
+DNS: 10.0.0.1   
+Then 
