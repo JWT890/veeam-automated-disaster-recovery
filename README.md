@@ -65,3 +65,17 @@ Then for the network in Proxmox:
 ![Network](./images/network.png)    
 Then wait for a few minutes to set it up and take note of the IP address and enter in into your browser and login with root and the password set:   
 ![Proxmox](./images/proxmox.png)    
+Next go download a Ubuntu Server VM from: https://ubuntu.com/download/server    
+Then for the VM we will be working with go to local (pve) and click on ISO image and click on upload and find the Ubuntu Server ISO that was downloaded and click on upload and wait for a few minutes for the transfer to occur:   
+![Iso](./images/iso.png)    
+Then click on the Create VM blue button in the right corner to create the Linux VM. 
+Linux VM:   
+Name: Test-Lab  
+RAM: 8142 MB    
+CPU: 2 Cores    
+Disk: 50 GB 
+Network: vmbr0  
+Then when done make sure to turn off KVM hardware virtualization since it isn't Windows 11. Good configuration for it:  
+![Config](./images/config.png)  
+![Config1](./images/config1.png)    
+Then click on start and wait for it initialize. 
