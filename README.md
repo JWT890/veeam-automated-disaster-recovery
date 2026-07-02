@@ -60,4 +60,8 @@ Then press enter and a login should pop up. Type in your Linux user and SMB pass
 Then go to VMWare Workstation and create a Proxmox VM in it by going into VMWare and click on file and clicking on new virtual machine and go through the setup such as Debian 12 64 bit for Guest OS, name of Proxmox VE, give it 8192 MB for memory, bridged adapter for network and 100 GB for the disk and click on create. 
 Then go to settings -> Proccessors and enable the Virtualize Intel VT-x/EPT or AMD-V/RVI like below:    
 ![Virt](./images/virt.png)  
-Then power on the VM and get it set up
+Then power on the VM and get it set up. If it doesn't work in VMWare, get it setup in VirtualBox and then go to go the Command prompt and type cd "C:\Program Files\Oracle\VirtualBox" and then type .\VBoxManage.exe modifyvm "Proxmox VE" --nested-hw-virt on and should enable Nested Virtualization.    
+Then for the network in Proxmox:    
+![Network](./images/network.png)    
+Then wait for a few minutes to set it up and take note of the IP address and enter in into your browser and login with root and the password set:   
+![Proxmox](./images/proxmox.png)    
