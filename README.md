@@ -83,3 +83,13 @@ After waiting for a few minutes, you will reach this:
 ![Screen](./images/screen.png)  
 Then go through the process of the steps of getting everything set up, then choose a name, server name, username and password. Then wait for it to finish setting up which will likely take a while:    
 ![Login](./images/login.png)    
+Then on the second computer's end, go to VirtualBox and create a VM.    
+First download Windows Server from this link, either 2019 or 2022 will do: https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019. 
+For the VM: 
+Name: WinServer-Veeam   
+Memory: 4046 MB
+2 Processors    
+EFI Enabled 
+Bridged Adapter for Adapter 1   
+80 GB for the disk and dynamic. 
+Next get the VM up and running to get the Server on the second computer up  
