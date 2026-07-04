@@ -109,4 +109,11 @@ Then click on mount to mount the iso and see this afterwards
 ![File](./images/file.png)  
 Then click on setup and have it run which will have a popup to click next with this next:   
 ![Veeam](./images/veeam.png)    
-Click on the first one and wait for it to initalize and click on accept for the license agreement, click on next on license screen and leave alone which will come up with a system configuration check screen
+Click on the first one and wait for it to initalize and click on accept for the license agreement, click on next on license screen and leave alone which will come up with a system configuration check screen and wait a while.    
+After waiting a while, this screen will pop up: 
+![More](./images/more.png)  
+Click on next which you take you to this screen:    
+![More1](./images/more1.png)    
+Clcik on next going through the screens and if it asks about tight disk space, select yes and continue and click install when there and see this screen:    
+![Install1](./images/install1.png)  
+With it installing, it will be a while for it to get set up
