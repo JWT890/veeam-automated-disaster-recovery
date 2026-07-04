@@ -79,3 +79,7 @@ Then when done make sure to turn off KVM hardware virtualization since it isn't 
 ![Config](./images/config.png)  
 ![Config1](./images/config1.png)    
 Then click on start and wait for it initialize. 
+After waiting for a few minutes, you will reach this:   
+![Screen](./images/screen.png)  
+Then go through the process of the steps of getting everything set up, then choose a name, server name, username and password. Then wait for it to finish setting up which will likely take a while:    
+![Login](./images/login.png)    
