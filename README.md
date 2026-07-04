@@ -93,3 +93,20 @@ EFI Enabled
 Bridged Adapter for Adapter 1   
 80 GB for the disk and dynamic. 
 Next get the VM up and running to get the Server on the second computer up  
+In the VM on the Windows setup, choose the option of Windows Server 2019 edition desktop like so:   
+![Setup1](./images/setup1.png)  
+Then click on custom install which will take you to the disk space that was allocated and click on it and next which will take you to the installation screen:  
+![Install](./images/install.png)    
+Then wait a while for it to get up and install. 
+After waiting a while, this screen will pop up: 
+![Windows](./images/windows.png)    
+Then set the admin password and hit finish and login to the Windows Server VM   
+![Machine](./images/machine.png)    
+Then open up a browser in the VM and download Edge or Chrome to not use Internet Explorer, then go to veeam.com/downloads to get Veeam Backup & Replication Community Edition or if downloaded previously, find the email and download from there and wait around 30-45 minutes for it to finish.   
+After waiting a while, it will have downloaded and then right click on the ISO download 
+![Option](./images/options.png) 
+Then click on mount to mount the iso and see this afterwards    
+![File](./images/file.png)  
+Then click on setup and have it run which will have a popup to click next with this next:   
+![Veeam](./images/veeam.png)    
+Click on the first one and wait for it to initalize and click on accept for the license agreement, click on next on license screen and leave alone which will come up with a system configuration check screen
