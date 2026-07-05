@@ -116,4 +116,17 @@ Click on next which you take you to this screen:
 ![More1](./images/more1.png)    
 Clcik on next going through the screens and if it asks about tight disk space, select yes and continue and click install when there and see this screen:    
 ![Install1](./images/install1.png)  
-With it installing, it will be a while for it to get set up
+With it installing, it will be a while for it to get set up.    
+After a while, this will pop up:    
+![Failure](./images/failure.webp)   
+Keep on clicking on retry or cancel until this pops up: 
+![V](./images/v.png)    
+Click on click here to open this folder for it: 
+![Temp](./images/temp.png)  
+Then run the service command to see what ones are not running:  
+![V1](./images/v1.png)  
+![V2](./images/v2.png)  
+Then go to the start menu and look up Veeam Backup & Replication Console and open it up 
+![V3](./images/v3.png)  
+Then see this:  
+![Backup](./images/backup.png)  
