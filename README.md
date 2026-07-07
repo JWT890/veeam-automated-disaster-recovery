@@ -130,3 +130,14 @@ Then go to the start menu and look up Veeam Backup & Replication Console and ope
 ![V3](./images/v3.png)  
 Then see this:  
 ![Backup](./images/backup.png)  
+Click connect which will likely result in this: 
+![Backup2](./images/backup2.png)
+Then in Powershell admin run:   
+Start-Service VeeamDistributionSVC, then Start-Service VeeamMountSVC, then VeeamWebSVC, then run Get-Service VeeamWebSvc, VeeamDistributionSvc, VeeamMountSvc | Select-Object Name, Status to get this: 
+![Start](./images/start.webp)   
+![Run](./images/run.webp)   
+The red and stopped means that VeeamWebSVC is still not running, run the following in this image:   
+![Run1](./images/run1.webp) 
+The error log means that its taking a long time to initialize and is being killed in the process, It could also be this if running to check memory in VM:   
+![Mem](./images/mem.webp)   
+Turn off the VM and increase the base memory to 8192 MB of storage and power it back on
