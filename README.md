@@ -144,3 +144,13 @@ Turn off the VM and increase the base memory to 8192 MB of storage and power it 
 When back on run Get-Service VeeamWebSvc | Select-Object Name, Status and if it says stopped, run Start-Service VeeamWebSvc wait a few minutes then run Get-Service VeeamWebSvc | Select-Object Name, Status and should be running. 
 Then click on the Backup and Replication one and click connect and click on trust this server and will prompt a login with username and password or sign in as current user. Click on current user and will load up into this:  
 ![Up](./images/up.png)  
+Then go to the first computer and open up the console and type this:    
+pveum user add veeam@pam --comment "Veeam Backup Service Account"   
+This will create the account for the service one, next will be the roles:   
+pveum role add VeeamBackup -privs "VM.Audit,VM.Backup,VM.Config.Disk,VM.Config.CDROM,VM.Config.CPU,VM.Config.Memory,Datastore.AllocateSpace,Datastore.Audit"    
+Which will assign the roles to the account, next type:  
+pveum aclmod / -user veeam@pam -role VeeamBackup.   
+Then type pveum passwd veeam@pam which should pop up with this: 
+![Error](./images/error.png)    
+The solution is to to this: 
+useradd -m veeam and pveum passwd veeam@pam and type the password to set which should work. 
