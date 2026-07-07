@@ -140,4 +140,7 @@ The red and stopped means that VeeamWebSVC is still not running, run the followi
 ![Run1](./images/run1.webp) 
 The error log means that its taking a long time to initialize and is being killed in the process, It could also be this if running to check memory in VM:   
 ![Mem](./images/mem.webp)   
-Turn off the VM and increase the base memory to 8192 MB of storage and power it back on
+Turn off the VM and increase the base memory to 8192 MB of storage and power it back on. 
+When back on run Get-Service VeeamWebSvc | Select-Object Name, Status and if it says stopped, run Start-Service VeeamWebSvc wait a few minutes then run Get-Service VeeamWebSvc | Select-Object Name, Status and should be running. 
+Then click on the Backup and Replication one and click connect and click on trust this server and will prompt a login with username and password or sign in as current user. Click on current user and will load up into this:  
+![Up](./images/up.png)  
