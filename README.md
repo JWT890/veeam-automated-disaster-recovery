@@ -154,3 +154,18 @@ Then type pveum passwd veeam@pam which should pop up with this:
 ![Error](./images/error.png)    
 The solution is to to this: 
 useradd -m veeam and pveum passwd veeam@pam and type the password to set which should work. 
+Then go to the second computer in the VM if turned off make sure Veeam services are running, start any not running and run these commands to keep them up and then reboot:  
+![C](./images/c.png)    
+Then with Veeam Backup & Restore back up, click on the Backup Infrastructure button and click on backup repositories:   
+![D](./images/d.png)    
+And then click on add repositories and see this:    
+[Options1](./images/options1.png)   
+Click on Network Attached and see the option to click on SMB share which will pop up with this:q
+![Name](./images/name.png)   
+Name it LinuxMint-Samba-Repo and hit next and get here: 
+![New](./images/new.png)     
+For the share put \\10.0.0.20\VeeamBackups and enable the requires access credentials option and click on add and enter the username and password for the share which should be accepted and click next done till apply to review and then click apply and wait a few minutes.  
+After a few minutes:    
+![Done](./images/done.png)  
+Then click on finish and it will pop up:    
+![B2](./images/b2.png)  
