@@ -169,3 +169,17 @@ After a few minutes:
 ![Done](./images/done.png)  
 Then click on finish and it will pop up:    
 ![B2](./images/b2.png)  
+Then go to Managed Servers and click on add Server and see this:    
+![1](./images/1.png)    
+Then click on Virtualization platform and see these options:    
+![2](./images/2.png)    
+Then click on Proxmox VE and see this:  
+![3](./images/3.png)    
+For DNS put 10.0.0.22 and hit next and enter credentials through add and hit yes to say you trust this server.  
+Then on credentials click on add and do the credentials for Proxmox sign in and verify it and click apply and wait a few minutes for it to configure.   
+![5](./images/5.png)    
+Then click yes on creating a worker and see this:   
+![W](./images/w.png)    
+Name it Test-Worker and click on add for storage and choose local-lvm and add it and hit next to see this screen:   
+![N](./images/n.png)    
+Click on add and add the vmbr0 network and hit apply and finish and wait a few minutes to test the worker.  
