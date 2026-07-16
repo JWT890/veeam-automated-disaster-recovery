@@ -185,10 +185,6 @@ Name it Test-Worker and click on add for storage and choose local-lvm and add it
 Click on add and add the vmbr0 network and hit apply and finish and wait a few minutes to test the worker.  
 After a few minutes it will pop up like this:   
 ![E](./images/e.png)    
-The error is in part because of KVM but Proxmox will have likely deleted it already. The solution is to open up the Proxmox shell and create a script that will auto disable KVM on any new VM. 
-A solution might be to switch on the main computer the Proxmox instance from VirtualBox to VMWare, after creating it, go to Veeam in Windows Server VM and go to Backup Repositories.   
-In Backup Repos, click on add repos and select the Direct Attached Storage -> Windows, name it WinServer-Repo, have the repo server as the VM, then have the path be C:\VeeamBackups verify and hit initialize and finish   
-![R](./images/r.png)    
 This might pop up as well:  
 ![Worker](./images/worker.webp) 
 The red means its having a issue with KVM, go to Proxmox and run this script:   
@@ -203,3 +199,11 @@ If the worker doesn't work once again, upgrade by doing this:
 The separate code 4 scripts, the first one will auto inject kvm: 0 automatically at any moment with the second one acting as a watchdog.    
 Then verify the watcher:    
 ![Watch](./images/watch.png)    
+The error is in part because of KVM but Proxmox will have likely deleted it already. The solution is to open up the Proxmox shell and create a script that will auto disable KVM on any new VM. 
+A solution might be to switch on the main computer the Proxmox instance from VirtualBox to VMWare, after creating it, go to Veeam in Windows Server VM and go to Backup Repositories.   
+In Backup Repos, click on add repos and select the Direct Attached Storage -> Windows, name it WinServer-Repo, have the repo server as the VM, then have the path be C:\VeeamBackups verify and hit initialize and finish   
+![R](./images/r.png)    
+Then on the first computer go to veeam.com/linux-backup-free.html and login and go to Downloads and search for Veeam Agent for Linux and click on the download option and get here: 
+![Download](./images/download.png)  
+Have this as the input and hit download. Then in the Ubuntu VM in Proxmox, find out what the ip is and then on the host machine type:   
+scp "C:\Users\user\Downloads\veeam-release-deb_13.0.2_amd64.deb" jon@10.0.0.244:/home/jon and see the transfer occur, then go to the Ubuntu VM
