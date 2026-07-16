@@ -183,9 +183,26 @@ Then click yes on creating a worker and see this:
 Name it Test-Worker and click on add for storage and choose local-lvm and add it and hit next to see this screen:   
 ![N](./images/n.png)    
 Click on add and add the vmbr0 network and hit apply and finish and wait a few minutes to test the worker.  
+<<<<<<< HEAD
 After a few minutes it will pop up like this:   
 ![E](./images/e.png)    
 The error is in part because of KVM but Proxmox will have likely deleted it already. The solution is to open up the Proxmox shell and create a script that will auto disable KVM on any new VM. 
 A solution might be to switch on the main computer the Proxmox instance from VirtualBox to VMWare, after creating it, go to Veeam in Windows Server VM and go to Backup Repositories.   
 In Backup Repos, click on add repos and select the Direct Attached Storage -> Windows, name it WinServer-Repo, have the repo server as the VM, then have the path be C:\VeeamBackups verify and hit initialize and finish   
 ![R](./images/r.png)    
+=======
+This might pop up as well:  
+![Worker](./images/worker.webp) 
+The red means its having a issue with KVM, go to Proxmox and run this script:   
+![Code](./images/code.png)  
+What this script does is that it allows it to intercept the worker creating it with KVM involved so it doesn't error out on itself. Then do this as well to move it to a different folder:  
+![Code1](./images/code1.png)    
+Then run this code so that KVM will be auto disabled:   
+![Code2](./images/code2.png)    
+If the worker doesn't work once again, upgrade by doing this:   
+![Code3](./images/code3.png)    
+![Code4](./images/code4.png)    
+The separate code 4 scripts, the first one will auto inject kvm: 0 automatically at any moment with the second one acting as a watchdog.    
+Then verify the watcher:    
+![Watch](./images/watch.png)    
+>>>>>>> 90f4e48fd1c362973d69201043dc0d111a6d0dbf
