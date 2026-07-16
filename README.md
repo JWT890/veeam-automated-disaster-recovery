@@ -183,3 +183,9 @@ Then click yes on creating a worker and see this:
 Name it Test-Worker and click on add for storage and choose local-lvm and add it and hit next to see this screen:   
 ![N](./images/n.png)    
 Click on add and add the vmbr0 network and hit apply and finish and wait a few minutes to test the worker.  
+After a few minutes it will pop up like this:   
+![E](./images/e.png)    
+The error is in part because of KVM but Proxmox will have likely deleted it already. The solution is to open up the Proxmox shell and create a script that will auto disable KVM on any new VM. 
+A solution might be to switch on the main computer the Proxmox instance from VirtualBox to VMWare, after creating it, go to Veeam in Windows Server VM and go to Backup Repositories.   
+In Backup Repos, click on add repos and select the Direct Attached Storage -> Windows, name it WinServer-Repo, have the repo server as the VM, then have the path be C:\VeeamBackups verify and hit initialize and finish   
+![R](./images/r.png)    
