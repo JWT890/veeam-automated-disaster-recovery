@@ -216,4 +216,20 @@ sudo kill 1769 to kill the process
 sudo rm /var/lib/dpkg/lock-frontend 
 sudo rm /var/lib/dpkg/lock  
 sudo rm /var/cache/apt/arhives/lock 
-Then type sudo apt install veeam -y which should work, then wait a few minutes
+Then type sudo apt install veeam -y which should work, then wait a few minutes. After waiting a few minutes:    
+![Error1](./images/error1.webp) 
+The error means it won't work properly but it did install, so after it gets done run:   
+sudo apt install linux-headers-$(uname -r) -y   
+sudo dkms autoinstall and it will see this after a few: 
+![Error2](./images/error2.webp) 
+Then type sudo apt remove veeam -y and then do sudo apt-cache search veeam to see this: 
+![Search](./images/search.webp) 
+Then type sudo apt remove veeam veeamsnap -y then sudo apt install veeam-nosnap -y and should install veeam properly.   
+Then type sudo veeam for it to come up and see this:    
+![V4](./images/v4.png)  
+Accept the licenses and hit next and on the next and see this:  
+![V5](./images/v5.png)  
+Tab down to workstation and get it on Server and tab to hit finish and should see this: 
+![V6](./images/V6.png)  
+Veeam is now up on the Ubuntu Linux and time to configure the job.  
+
