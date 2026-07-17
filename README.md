@@ -206,4 +206,14 @@ In Backup Repos, click on add repos and select the Direct Attached Storage -> Wi
 Then on the first computer go to veeam.com/linux-backup-free.html and login and go to Downloads and search for Veeam Agent for Linux and click on the download option and get here: 
 ![Download](./images/download.png)  
 Have this as the input and hit download. Then in the Ubuntu VM in Proxmox, find out what the ip is and then on the host machine type:   
-scp "C:\Users\user\Downloads\veeam-release-deb_13.0.2_amd64.deb" jon@10.0.0.244:/home/jon and see the transfer occur, then go to the Ubuntu VM
+scp "C:\Users\user\Downloads\veeam-release-deb_13.0.2_amd64.deb" jon@10.0.0.244:/home/jon and see the transfer occur, then go to the Ubuntu VM and type:    
+sudo dpkg -i ~/veeam-release*.deb   
+sudo apt update 
+Then sudo apt install veeam -y and will see this:   
+![Wait](./images/wait.png)  
+Then type Ctrl + C and run  
+sudo kill 1769 to kill the process  
+sudo rm /var/lib/dpkg/lock-frontend 
+sudo rm /var/lib/dpkg/lock  
+sudo rm /var/cache/apt/arhives/lock 
+Then type sudo apt install veeam -y which should work, then wait a few minutes
