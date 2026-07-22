@@ -232,4 +232,22 @@ Accept the licenses and hit next and on the next and see this:
 Tab down to workstation and get it on Server and tab to hit finish and should see this: 
 ![V6](./images/V6.png)  
 Veeam is now up on the Ubuntu Linux and time to configure the job.  
-
+Start by pressing C to configure a job and see this:    
+![Job](./images/job.png)    
+Name it TestVM-Backup and hit next and see this screen: 
+![Job1](./images/job1.png)  
+Keep it as the recommended option and hit next and see this:    
+![Job2](./images/job2.png)  
+Keep it on Veeam and hit next and see this: 
+![Job3](./images/job3.png)  
+Enter in the details and hit next and accept the cert license and hit next and should see this: 
+![Job4](./images/job4.png)  
+Then hit next and see this: 
+![Job5](./images/job5.png)  
+Leave as is and hit next and see this:  
+![Job6](./images/job6.png)  
+Hit finish and will take you back to the original screen then press S and see this: 
+![Job7](./images/job7.png)  
+Press enter and the job should start:   
+![Job8](./images/job8.png)  
+Then wait a while for it to finish
