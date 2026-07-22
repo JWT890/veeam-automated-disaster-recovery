@@ -250,4 +250,9 @@ Hit finish and will take you back to the original screen then press S and see th
 ![Job7](./images/job7.png)  
 Press enter and the job should start:   
 ![Job8](./images/job8.png)  
-Then wait a while for it to finish
+Then wait a while for it to finish and after finishing should say:  
+![Job9](./images/job9.png)  
+And success means that it is done backing up, can check the Windows Server VM to verify
+
+# Disaster Recovery
+Now its time to do DR tests
