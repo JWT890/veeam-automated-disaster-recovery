@@ -252,9 +252,26 @@ Press enter and the job should start:
 ![Job8](./images/job8.png)  
 Then wait a while for it to finish and after finishing should say:  
 ![Job9](./images/job9.png)  
-And success means that it is done backing up, can check the Windows Server VM to verify
-![Finish](./images/finish.png)
-And shows that it completed in about 20 minutes.
+And success means that it is done backing up, can check the Windows Server VM to verify. Completed the backup in about 20 minutes or so
 
 # Disaster Recovery
 Now its time to do DR tests
+First test is going to lose a file by typing echo "This is critical data -$(date)" > ~/important-file.txt and cat ~/important-file.txt: 
+![Test](./images/test.png)  
+Then type sudo veeamconfig job start --name "TestVM-Backup" and should see this:    
+![Runn](./images/run.png)   
+Then type sudo veeamconfig job start --name "TestVM-Backup" and sudo veeamconfig session list and see this: 
+![Run2](./images/run2.png)  
+Then after waiting a few minutes:   
+![Run3](./images/run3.png)  
+The latest run lasted for about 8 minutes then type rm ~/important-file.txt and ls ~/important-file.txt which should remove it. 
+Type sudo veeam and see the backups screen and press R and see this screen: 
+![Back](./images/back.png)  
+Press Enter and choose the backup that was run today. Then after a few minutes: 
+![Result](./images/result.png)  
+Then go to the command line terminal and type:  
+![Type](./images/type.png)  
+The commands verified it was brought back, copied to a directory and the data was not corrupted.    
+
+Second DR test is going to be Point-In-Time Recovery.   
+
