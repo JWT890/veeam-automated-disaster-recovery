@@ -253,6 +253,8 @@ Press enter and the job should start:
 Then wait a while for it to finish and after finishing should say:  
 ![Job9](./images/job9.png)  
 And success means that it is done backing up, can check the Windows Server VM to verify
+![Finish](./images/finish.png)
+And shows that it completed in about 20 minutes.
 
 # Disaster Recovery
 Now its time to do DR tests
