@@ -363,4 +363,16 @@ cat ~/company-data-restored/financials.txt
 cat ~/company-data-restored/customers.txt   
 cat ~/company-data-restored/employees.txt   
 ![I](./images/i.png)    
+With this the three files have been restored in full, worth knowing that its good to keep all backups on a isolated VLAN or network segment to prevent this, locked and with offsite/cloud backups  
+So run sudo umount /mnt/veeamrestore    
+sudo umount /mnt/backup which will its busy so run  
+ps aux | grep veeamagent    
+sudo kill -9 2680   
+sudo systemctl restart veeamservice.service 
+Then verify it worked by running:   
+sudo umount /mnt/backup 2>/dev/null; echo "done"    
+sudo veeamconfig session list | grep Running    
+![U](./images/u.png)    
 
+Then for the final test is full VM restore  
+Go to the second computer with Windows Server Veeam
