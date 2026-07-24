@@ -326,4 +326,41 @@ sudo mount /tmp/veeamflr/{ee81f814-c727-468d-b48e-7910d4e5770a}/{bad1b2ae-b4f7-4
 ls /mnt/veeamrestore    
 Then run ls /mnt/veeamrestore/home/jon/company-data/ for this:  
 ![F4](./images/f4.webp) 
+Shows that both 0 and 1 shows the contents of boot while ubuntu-vg isn't being shown so run:    
+sudo lvs    
+sudo lvsdisplay 
+sudo vgscan 
+sudo lvscan 
+lsblk   
+![F5](./images/f5.webp) 
+The problem from this is that Veeam mounted three devices with the main system being on loop 0 so run:  
+sudo pvscan 
+sudo vgscan --cache 
+sudo lvscan 
+sudo vgchange -ay   
+sudo lvscan 
+lsblk | grep loop0  
+sudo lvs    
+![F6](./images/f6.webp) 
+One of the volume groups, ubuntu-vg, is showing so run: 
+sudo pvs    
+sudo pvscan --cache /dev/loop0  
+sudo vgscan 
+sudo lvscan 
+![F7](./images/f7.webp) 
+Which shows that that loop0 is a filesystem image so run:   
+sudo mount /dev/loop0 /mnt/veeamrestore 
+ls /mnt/veeamrestore    
+sudo mount -t ext4 /dev/loop0 /mnt/veeamrestore 
+ls /mnt/veeamrestore to see this:   
+![F8](./images/f8.webp) 
+Which is the root file system so run:   
+ls /mnt/veeamrestore/home/jon/company-data/ 
+Then run to restore them:   
+cp -r /mnt/veeamrestore/home/jon/company-data/ ~/company-data-restored/ 
+And verify by running:  
+cat ~/company-data-restored/financials.txt  
+cat ~/company-data-restored/customers.txt   
+cat ~/company-data-restored/employees.txt   
+![I](./images/i.png)    
 
