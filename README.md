@@ -287,4 +287,18 @@ Then check by typing cat ~/app-config.txt and see the corrupted one:
 ![P4](./images/p4.png)  
 Then type sudo veeam and select R and choose the 1:53 time and press enter and see this:    
 ![Screen1](./images/screen1.png)  
+Then go back and press R to this:   
+![P5](./images/p5.png)  
+Then after giving it a couple minutes escape back to the command line and run for the original: 
+![OG](./images/og.png)  
+The Point-in-Time Restore worked perfectly. 
 
+Third DR test is ransomware testing by making sure it can restore after a ransomeware incident  
+Start by doing creating the folder and reports/records that will be used and checking to see for verification:  
+![R1](./images/r1.png)  
+Then run sudo veeamconfig job start --name "TestVM-Backup" and wait for a couple minutes    
+But before doing this unmount the backup by typing sudo umount -l /mnt/backup and type ps aux | grep -i veeam and see this: 
+![E1](./images/e1.png)  
+Then kill the process by tping sudo kill -9 5088 like so:   
+![E2](./images/e2.png)  
+Other two commands verify
