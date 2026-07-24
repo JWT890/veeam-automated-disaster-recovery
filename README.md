@@ -375,4 +375,9 @@ sudo veeamconfig session list | grep Running
 ![U](./images/u.png)    
 
 Then for the final test is full VM restore  
-Go to the second computer with Windows Server Veeam
+Go to the second computer with Windows Server Veeam and open up Veeam and go to Home -> Backup -> Disk like so: 
+![H](./images/h.png)    
+Then right click on the VM option like so:  
+![Option](./images/option.png)  
+Hovering over it presents several options and select Proxmox in which this will pop up: 
+![Y](./images/y.png)    
