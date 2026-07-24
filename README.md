@@ -273,5 +273,18 @@ Then go to the command line terminal and type:
 ![Type](./images/type.png)  
 The commands verified it was brought back, copied to a directory and the data was not corrupted.    
 
-Second DR test is going to be Point-In-Time Recovery.   
+Second DR test is going to be Point-In-Time Recovery. Point in Time means restoring from a specific older restore point but not the latest. 
+First thing to do is create an original file by typing echo "Version 1 - original config - $(date)" > ~/app-config.txt and cat ~/app-config.txt:    
+![P](./images/p.png)    
+Then back it up with sudo veeamconfig job start --name "TestVM-Backup" and wait for the success message in sudo veeamconfig session list:   
+![P2](./images/p1.png)  
+Backup was completed in about 5 minutes.    
+Then its time to create a corrupted version of it like so:  
+![P2](./images/p2.png)  
+Then run another backup with sudo veeamconfig job start --name "TestVM-Backup" and wait a few minutes for the second backup:    
+![P3](./images/p3.png)  
+Then check by typing cat ~/app-config.txt and see the corrupted one:    
+![P4](./images/p4.png)  
+Then type sudo veeam and select R and choose the 1:53 time and press enter and see this:    
+![Screen](./images/screen.png)  
 
