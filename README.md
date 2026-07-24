@@ -301,4 +301,29 @@ But before doing this unmount the backup by typing sudo umount -l /mnt/backup an
 ![E1](./images/e1.png)  
 Then kill the process by tping sudo kill -9 5088 like so:   
 ![E2](./images/e2.png)  
-Other two commands verify
+Other two commands verify then run the backup and wait for the success message after about 8 minutes    
+Then run the ransomware attack by running:  
+for f in ~/company-data/*; do   
+    echo "ENCRYPTED_ $(date)" > "$f"
+done
+Then confirm by cat on all the files in the folder like so: 
+![G](./images/g.png)    
+Then type sudo veeam and mount the backup after pressing R and if you see this: 
+![F](./images/f.webp)   
+Run find /mnt -type f 2>/dev/null, ls /mnt/backup/ and find /tmp/veeamflr name "*.txt" 2>/dev/null  
+![F1](./images/f1.webp) 
+This shows no .txt files were found so run: 
+sudo /tmp/veeamflr/{ee81f814-c727-468d-b48e-7910d4e5770a}/  
+![F2](./images/f2.webp) 
+This will show LVM volume snapshots and not the filesystem so run:  
+sudo mkdir -p /mnt/veeamrestore 
+sudo mount /tmp/veeamflr/{ee81f814-c727-468d-b48e-7910d4e5770a}/{bad1b2ae-b4f7-4785-9586-4c1b80cb286}_1 /mnt/veeamrestore   
+Then run ls /mnt/veeamrestore for this: 
+![F3](./images/f3.webp) 
+Which is the boot partition so run: 
+sudo umount /mnt/veeamrestore   
+sudo mount /tmp/veeamflr/{ee81f814-c727-468d-b48e-7910d4e5770a}/{bad1b2ae-b4f7-4785-9586-4c1b80cb286}_1 /mnt/veeamrestore   
+ls /mnt/veeamrestore    
+Then run ls /mnt/veeamrestore/home/jon/company-data/ for this:  
+![F4](./images/f4.webp) 
+
