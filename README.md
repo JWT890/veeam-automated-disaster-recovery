@@ -286,5 +286,5 @@ Then run another backup with sudo veeamconfig job start --name "TestVM-Backup" a
 Then check by typing cat ~/app-config.txt and see the corrupted one:    
 ![P4](./images/p4.png)  
 Then type sudo veeam and select R and choose the 1:53 time and press enter and see this:    
-![Screen](./images/screen.png)  
+![Screen1](./images/screen1.png)  
 
